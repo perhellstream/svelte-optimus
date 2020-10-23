@@ -6,7 +6,7 @@ let leksaker = [
     { id:4, name: "Jonas 'leksaksherre' Malm" },
     { id:5, name: "Erika 'leksaksfru' Malm" },
     { id:6, name: "Mats 'leksaksherre' Malm" },
-    { id:7, name: "Per 'CyberPower5000' Hellström" },
+    { id:7, name: "Per 'CyberPower5000' Malm" },
 ];
 var getLeksaker = function () {
   return leksaker;
