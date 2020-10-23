@@ -1,6 +1,6 @@
 <script>
 	import Navigation from './Navigation.svelte';
-
+	import TeamList from './TeamList.svelte';
 	export let name;
 	let src= 'tutorial/image.gif';
 	
@@ -8,16 +8,16 @@
 	function handleClick(){
 		count++;
 	}
+	$: console.log(`the count is ${count}`);
 	$: doubled = count * 2;
 </script>
 
 <main>
 	<Navigation asdf="test"/>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<img src={src} alt="A man dances.">
-	<button on:click={handleClick}>Clicked {count} {count === 1 ? 'time' : 'times'}</button>
-	<p>{count} doubled is {doubled}</p>
+	<h1>Leksaks Prime</h1>
+	<p>Medlemmar i leksaksklubben</p>
+	<p>Hämtas från serverless azure functions:</p>
+	<TeamList/>
 </main>
 
 <style>
