@@ -8,7 +8,7 @@ export const parseList = async (response) => {
   }
   return list;
 };
-export default async function getLeksaker() {
+export const getLeksaker = async () => {
   try {
     const response = await fetch(`${API}/leksaker`, {
       method: "GET",
@@ -19,4 +19,55 @@ export default async function getLeksaker() {
   } catch (error) {
     return console.log(error);
   }
+};
+export const deleteLeksak =  async (id) => {
+  try {
+    const response = await fetch(`${API}/leksaker/${id}`, {
+      method: "DELETE",
+    });
+    console.log(response);
+    return response;
+  } catch (error) {
+    return console.log(error);
+  }
 }
+export const createLeksak =  async (name) => {
+  try {
+    
+    const response = await fetch(`${API}/leksaker/`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: name})
+    });
+    console.log(response);
+    const leksak = await parseList(response);
+    console.log(leksak);
+    return leksak;
+  } catch (error) {
+    return console.log(error);
+  }
+}
+export const updateLeksak =  async (leksak) => {
+  try {
+    console.log("Updating id: ");
+    console.log(leksak);
+    const response = await fetch(`${API}/leksaker/${leksak._id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: leksak.name})
+    });
+    console.log("put response");
+    console.log(response);
+    const resultLeksak = await parseList(response);
+    console.log("put parsed");
+    console.log(resultLeksak);
+    return resultLeksak;
+  } catch (error) {
+    return console.log(error);
+  }
+}
+
