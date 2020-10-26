@@ -1,4 +1,8 @@
 const leksaker = require("../static-data/leksaks-data");
+// const mongo_connection = require("../database/connection");
+// const mongoose = require("mongoose");
+// const leksak =  require('../database/models/leksak.model');
+
 module.exports = async function (context, req) {
   context.log("JavaScript HTTP trigger function processed a request. ROW 3");
   context.log(leksaker.getLeksaker());

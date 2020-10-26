@@ -1,0 +1,21 @@
+{
+  "name": "api_ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start --verbose",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.2-beta2",
+    "@types/mongoose": "^5.7.36",
+    "typescript": "^3.3.3"
+  }
+}
