@@ -1,6 +1,7 @@
 <script>
 	import Navigation from './Navigation.svelte';
 	import TeamList from './TeamList.svelte';
+	import AzureIcon from './azure-functions.svelte';
 	export let name;
 	let src= 'tutorial/image.gif';
 	
@@ -14,9 +15,10 @@
 
 <main>
 	<Navigation asdf="test"/>
+	<AzureIcon/>
 	<h1>Leksaks Prime</h1>
 	<p>Medlemmar i leksaksklubben</p>
-	<p>Hämtas från serverless azure functions:</p>
+	<p></p>
 	<TeamList/>
 </main>
 
